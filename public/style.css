@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
+
+* {
+    font-family: 'Roboto', sans-serif;
+}
+
+main {
+    display: flex;
+    justify-content: space-around;
+}
+
+main img {
+    height: 465px;
+    width: 400px;
+    margin-top: 59px;
+}
+
+.select-word {
+    width: 200px;
+    height: 60px;
+    background-color: #27AE60;
+    border-radius: 8px;
+    border-style: none;
+    margin-top: 89px;
+}
+
+.select-word p {
+    color: white;
+    font-size: 20px;
+}
+
+.alphabet {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 625px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+}
+
+.alphabet button {
+    width: 40px;
+    height: 40px;
+    background-color: #9FAAB5;
+    border-radius: 3px;
+    border-style: none;
+    border-radius: 3px;
+    border-style: none;
+    margin-left: 5px;
+    margin-top: 5px;
+}
+
+.guess-word {
+    display: flex;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    gap: 11px;
+    align-items: center;
+}
+
+.guess-word p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+}
+
+.guess-word input {
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.25);
+    border-radius: 3px;
+    background: #FFFFFF;
+    border: 1px solid #CCCCCC;
+    width: 250px;
+    height: 40px;
+}
+
+.guess-word button {
+    background: #E1ECF4;
+    border: 1px solid #7AA7C7;
+    border-radius: 3px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-size: 16px;
+    
+    
+    
+    text-align: center;
+    color: #3C76A1;
+    width: 80px;
+    height: 40px;
+}
