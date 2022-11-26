@@ -90,3 +90,17 @@ main img {
     width: 80px;
     height: 40px;
 }
+
+.cursor{
+    cursor: pointer;
+}
+
+.no-click{
+    cursor: default;
+}
+
+.word-start{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}

@@ -1,24 +1,13 @@
-import { useState } from "react"
-
-
-export default function Jogo(){
-
-    const initialForca = 0;
-
-    const [forcaCounter, setForca] = useState(initialForca)
-
-    function wrongWord(){
-        if(forcaCounter < 6){
-            setForca(forcaCounter + 1)
-        }
-    }
-
+export default function Jogo(props){
     return(
         <main>
-            <img src={`assets/forca${forcaCounter}.png`} onClick = {wrongWord} />
-            <button className="select-word">
-                <p>Escolher Palavra</p>
-            </button>
+            <img src={`assets/forca${props.forcaCounter}.png`} onClick = {()=> props.wrongWord()} />
+            <div className="word-start">
+                <button className="select-word" onClick={()=> props.selectWord()}><p className="cursor">Escolher Palavra</p></button>
+                <div class="word">
+                    {props.underlines}
+                </div>
+            </div>
         </main>
     )
 }

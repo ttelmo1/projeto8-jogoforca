@@ -28,6 +28,5 @@ function randomWord() {
     return palavras[Math.floor(Math.random() * palavras.length)]
   }
   
+  
   export { randomWord }
-
-export default palavras
