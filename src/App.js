@@ -12,6 +12,10 @@ function App() {
   const [inGame, setInGame] = useState(false)
   const palavra = randomWord()
   const arr = (Array(palavra.length).fill("_\t"))
+  const [arrChute, setArrChute] = useState([])
+  const [textoChute , setTextoChute] = useState("")
+  const [letterBlock, setLetterBlock] = useState([])
+  const [fimDoJogo, setFimDoJogo] = useState("")
   
   console.log(word)
   console.log(underlines)
@@ -44,23 +48,41 @@ function App() {
 //trocou cada underline pela letra
 function testCase(a){
   if(inGame){
-  if(word.includes(a)){
-    [...word].filter((element, index)=> {
-      if(element == a){
-        underlines[index] = a
+    if(!letterBlock.includes(a)){
+      setLetterBlock([...letterBlock, a])
+      if(word.includes(a)){
+        [...word].filter((element, index)=> {
+          if(element == a){
+            underlines[index] = a
+          }
+        })
+        setUnderlines([...underlines])
       }
-    })
-    setUnderlines([...underlines])
+      
+      else{wrongWord()}
+      if(underlines.join('') == word || forcaCounter == 5){
+        endGame()
+      }
+      }
+    }
+}
+
+function endGame(){
+  setInGame(false)
+  if(underlines.join('') == word ){
+    setFimDoJogo("venceu")
   }
-  else{wrongWord()}
+  if(forcaCounter ==5){
+    setFimDoJogo("perdeu")
   }
 }
 
+
   return (
     <>
-      <Jogo selectWord={selectWord} word={word} underlines={underlines} wrongWord={wrongWord} forcaCounter={forcaCounter} inGame={inGame} setInGame={setInGame}/>
+      <Jogo selectWord={selectWord} word={word} underlines={underlines} wrongWord={wrongWord} forcaCounter={forcaCounter} inGame={inGame} setInGame={setInGame} fimDoJogo={fimDoJogo} setFimDoJogo={setFimDoJogo}/>
       <Letras testCase={testCase} alphabet={alphabet}/>
-      <Chute />
+      <Chute textoChute={textoChute} setTextoChute={setTextoChute} arrChute={arrChute} setArrChute={setArrChute} palavra={palavra} word={word} setUnderlines={setUnderlines} wrongWord={wrongWord} setForca={setForca} forcaCounter={forcaCounter} inGame={inGame} setInGame={setInGame}/>
     </>
   );
 }

@@ -104,3 +104,11 @@ main img {
     flex-direction: column;
     justify-content: space-between;
 }
+
+.venceu{
+    color: green;
+}
+
+.perdeu{
+    color: red;
+}
