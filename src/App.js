@@ -91,7 +91,7 @@ function colorWord(){
   return (
     <>
       <Jogo selectWord={selectWord} word={word} underlines={underlines} wrongWord={wrongWord} forcaCounter={forcaCounter} inGame={inGame} setInGame={setInGame} fimDoJogo={fimDoJogo} setFimDoJogo={setFimDoJogo} endGame={endGame}/>
-      <Letras testCase={testCase} alphabet={alphabet} underlines={underlines} word={word} forcaCounter={forcaCounter}/>
+      <Letras testCase={testCase} alphabet={alphabet} underlines={underlines} word={word} forcaCounter={forcaCounter} letterBlock={letterBlock}/>
       <Chute textoChute={textoChute} setTextoChute={setTextoChute} arrChute={arrChute} setArrChute={setArrChute} palavra={palavra} word={word} setUnderlines={setUnderlines} wrongWord={wrongWord} setForca={setForca} forcaCounter={forcaCounter} inGame={inGame} setInGame={setInGame} endGame={endGame} underlines={underlines} setFimDoJogo={setFimDoJogo}/>
     </>
   );
