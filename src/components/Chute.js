@@ -1,4 +1,4 @@
-export default function Chute({arrChute,setArrChute,textoChute, setTextoChute , word, setUnderlines, forcaCounter, setForca, inGame, setInGame}) {
+export default function Chute({arrChute,setArrChute,textoChute, setTextoChute , word, setUnderlines, forcaCounter, setForca, inGame, setInGame, endGame, underlines}) {
 
     function chutarPalavra(){
         if(inGame){
@@ -22,8 +22,10 @@ export default function Chute({arrChute,setArrChute,textoChute, setTextoChute , 
                 <input 
                 onChange={(e) => inGame ? setTextoChute(e.target.value) : ""}
                 value={textoChute}
+                disabled = {underlines.join('') == word || forcaCounter == 5}
+                data-test="guess-input"
                 ></input>
-                <button onClick={chutarPalavra} className="cursor">Chutar</button>
+                <button onClick={chutarPalavra} disabled = {underlines.join('') == word || forcaCounter == 5} className="cursor" data-test="guess-button">Chutar</button>
             </div>
         </>
     )

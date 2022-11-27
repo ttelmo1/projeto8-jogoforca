@@ -35,12 +35,14 @@ function App() {
       setWord(palavra)
       setUnderlines([...arr])
       setForca(0)
+      setLetterBlock([])
     }
     else{
       setInGame(true)
       setWord(palavra)
       setUnderlines([...arr])
       setForca(0)
+      setLetterBlock([])
     }
     
 }
@@ -71,9 +73,11 @@ function endGame(){
   setInGame(false)
   if(underlines.join('') == word ){
     setFimDoJogo("venceu")
+    console.log(fimDoJogo)
   }
-  if(forcaCounter ==5){
+  if(forcaCounter == 5){
     setFimDoJogo("perdeu")
+    console.log(fimDoJogo)
   }
 }
 
@@ -81,8 +85,8 @@ function endGame(){
   return (
     <>
       <Jogo selectWord={selectWord} word={word} underlines={underlines} wrongWord={wrongWord} forcaCounter={forcaCounter} inGame={inGame} setInGame={setInGame} fimDoJogo={fimDoJogo} setFimDoJogo={setFimDoJogo}/>
-      <Letras testCase={testCase} alphabet={alphabet}/>
-      <Chute textoChute={textoChute} setTextoChute={setTextoChute} arrChute={arrChute} setArrChute={setArrChute} palavra={palavra} word={word} setUnderlines={setUnderlines} wrongWord={wrongWord} setForca={setForca} forcaCounter={forcaCounter} inGame={inGame} setInGame={setInGame}/>
+      <Letras testCase={testCase} alphabet={alphabet} underlines={underlines} word={word} forcaCounter={forcaCounter}/>
+      <Chute textoChute={textoChute} setTextoChute={setTextoChute} arrChute={arrChute} setArrChute={setArrChute} palavra={palavra} word={word} setUnderlines={setUnderlines} wrongWord={wrongWord} setForca={setForca} forcaCounter={forcaCounter} inGame={inGame} setInGame={setInGame} endGame={endGame} underlines={underlines}/>
     </>
   );
 }
