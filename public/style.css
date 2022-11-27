@@ -105,6 +105,11 @@ main img {
     justify-content: space-between;
 }
 
+.word-start div{
+    font-weight: 700;
+    font-size: 30px;
+}
+
 .venceu{
     color: green;
 }

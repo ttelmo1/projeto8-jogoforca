@@ -1,15 +1,17 @@
-export default function Chute({arrChute,setArrChute,textoChute, setTextoChute , word, setUnderlines, forcaCounter, setForca, inGame, setInGame, endGame, underlines}) {
+export default function Chute({arrChute,setArrChute,textoChute, setTextoChute , word, setUnderlines, forcaCounter, setForca, inGame, setInGame, setFimDoJogo, underlines}) {
 
     function chutarPalavra(){
         if(inGame){
         setArrChute([...arrChute, textoChute])
         if(textoChute == word){
             setUnderlines([word])
+            setFimDoJogo(`venceu`)
             setInGame(false)
         }
         else{
-            setForca(forcaCounter = 6)
+            setForca(6)
             setUnderlines([word])
+            setFimDoJogo(`perdeu`)
             setInGame(false)
         }
         setTextoChute("")

@@ -15,7 +15,7 @@ function App() {
   const [arrChute, setArrChute] = useState([])
   const [textoChute , setTextoChute] = useState("")
   const [letterBlock, setLetterBlock] = useState([])
-  const [fimDoJogo, setFimDoJogo] = useState("")
+  const [fimDoJogo, setFimDoJogo] = useState("black")
   
   console.log(word)
   console.log(underlines)
@@ -72,21 +72,27 @@ function testCase(a){
 function endGame(){
   setInGame(false)
   if(underlines.join('') == word ){
-    setFimDoJogo("venceu")
+    setFimDoJogo(`venceu`)
+    setUnderlines([word])
     console.log(fimDoJogo)
   }
   if(forcaCounter == 5){
-    setFimDoJogo("perdeu")
-    console.log(fimDoJogo)
+    setFimDoJogo(`perdeu`)
+    setUnderlines([word])
+    console.log("perdeu")
   }
+}
+
+function colorWord(){
+
 }
 
 
   return (
     <>
-      <Jogo selectWord={selectWord} word={word} underlines={underlines} wrongWord={wrongWord} forcaCounter={forcaCounter} inGame={inGame} setInGame={setInGame} fimDoJogo={fimDoJogo} setFimDoJogo={setFimDoJogo}/>
+      <Jogo selectWord={selectWord} word={word} underlines={underlines} wrongWord={wrongWord} forcaCounter={forcaCounter} inGame={inGame} setInGame={setInGame} fimDoJogo={fimDoJogo} setFimDoJogo={setFimDoJogo} endGame={endGame}/>
       <Letras testCase={testCase} alphabet={alphabet} underlines={underlines} word={word} forcaCounter={forcaCounter}/>
-      <Chute textoChute={textoChute} setTextoChute={setTextoChute} arrChute={arrChute} setArrChute={setArrChute} palavra={palavra} word={word} setUnderlines={setUnderlines} wrongWord={wrongWord} setForca={setForca} forcaCounter={forcaCounter} inGame={inGame} setInGame={setInGame} endGame={endGame} underlines={underlines}/>
+      <Chute textoChute={textoChute} setTextoChute={setTextoChute} arrChute={arrChute} setArrChute={setArrChute} palavra={palavra} word={word} setUnderlines={setUnderlines} wrongWord={wrongWord} setForca={setForca} forcaCounter={forcaCounter} inGame={inGame} setInGame={setInGame} endGame={endGame} underlines={underlines} setFimDoJogo={setFimDoJogo}/>
     </>
   );
 }
