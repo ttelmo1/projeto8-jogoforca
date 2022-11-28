@@ -61,7 +61,7 @@ function testCase(a){
       }
       
       else{wrongWord()}
-      if(underlines.join('') == word || forcaCounter > 5){
+      if(underlines.join('') == word || forcaCounter == 5){
         endGame()
       }
       }
@@ -74,7 +74,7 @@ function endGame(){
     setFimDoJogo(`venceu`)
     setUnderlines([word])
   }
-  if(forcaCounter > 5){
+  if(forcaCounter == 5){
     setFimDoJogo(`perdeu`)
     setUnderlines([word])
   }
