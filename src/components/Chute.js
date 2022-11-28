@@ -19,7 +19,7 @@ export default function Chute({arrChute,setArrChute,textoChute, setTextoChute , 
     }
     return (
         <>
-            <div class="guess-word">
+            <div className="guess-word">
                 <p className="no-click">Já sei a palavra!</p>
                 <input 
                 onChange={(e) => inGame ? setTextoChute(e.target.value) : ""}

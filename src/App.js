@@ -15,11 +15,8 @@ function App() {
   const [arrChute, setArrChute] = useState([])
   const [textoChute , setTextoChute] = useState("")
   const [letterBlock, setLetterBlock] = useState([])
-  const [fimDoJogo, setFimDoJogo] = useState("black")
+  const [fimDoJogo, setFimDoJogo] = useState(`black`)
   
-  console.log(word)
-  console.log(underlines)
-
   function wrongWord(){
     if(forcaCounter < 5){
         setForca(forcaCounter + 1)
@@ -36,6 +33,7 @@ function App() {
       setUnderlines([...arr])
       setForca(0)
       setLetterBlock([])
+      setFimDoJogo(`black`)
     }
     else{
       setInGame(true)
@@ -43,6 +41,7 @@ function App() {
       setUnderlines([...arr])
       setForca(0)
       setLetterBlock([])
+      setFimDoJogo(`black`)
     }
     
 }
@@ -62,7 +61,7 @@ function testCase(a){
       }
       
       else{wrongWord()}
-      if(underlines.join('') == word || forcaCounter == 5){
+      if(underlines.join('') == word || forcaCounter > 5){
         endGame()
       }
       }
@@ -74,19 +73,12 @@ function endGame(){
   if(underlines.join('') == word ){
     setFimDoJogo(`venceu`)
     setUnderlines([word])
-    console.log(fimDoJogo)
   }
-  if(forcaCounter == 5){
+  if(forcaCounter > 5){
     setFimDoJogo(`perdeu`)
     setUnderlines([word])
-    console.log("perdeu")
   }
 }
-
-function colorWord(){
-
-}
-
 
   return (
     <>
